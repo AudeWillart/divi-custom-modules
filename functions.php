@@ -94,6 +94,20 @@ function wpc_get_fullwidth_image_id($image_url) {
    return attachment_url_to_postid($image_url);
 }
 
+function divi_child_theme_setup_image_fullwidth() {
+   if ( class_exists('custom_ET_Builder_Module_Blurb')) {
+      get_template_part( 'custom-modules/blurb_module' );
+      $blurb_module = new custom_ET_Builder_Module_Blurb();
+      remove_shortcode( 'et_pb_blurb' );
+      add_shortcode( 'et_pb_blurb', array($blurb_module, '_shortcode_callback') );
+   }
+}
+add_action('wp', 'divi_child_theme_setup_blurb_module', 9999);
+
+function wpc_get_blurb_module_image_id($image_url) {
+   return attachment_url_to_postid($image_url);
+}
+
 //Change la position de la sidebar par défaut. 
 // mettre ce code dans le fichier functions.php
 
