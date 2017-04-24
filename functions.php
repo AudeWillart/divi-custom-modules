@@ -106,7 +106,7 @@ add_action('wp', 'divi_child_theme_setup_blurb_module', 9999);
 
 function wpc_get_blurb_module_image_id($image_url) {
    return attachment_url_to_postid($image_url);
-}
+} // A quoi elle sert cette fonction???
 
 //Change la position de la sidebar par défaut. 
 // mettre ce code dans le fichier functions.php
