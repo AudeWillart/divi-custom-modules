@@ -427,7 +427,7 @@ class custom_ET_Builder_Module_Blurb extends ET_Builder_Module {
 				    $img_default_alt   = get_post_meta( $img_id , '_wp_attachment_image_alt', true),
 				    $img_default_title = get_the_title( $img_id ),
 					'<img src="%1$s" alt="%2$s" class="et-waypoint%3$s" />',
-					esc_url( $img ),
+					esc_url( $image ),
          			( '' !== $alt ? esc_attr( $alt ) : $img_default_alt ),
 					esc_attr( " et_pb_animation_{$animation}" )
 				);
