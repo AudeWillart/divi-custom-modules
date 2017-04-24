@@ -1,8 +1,9 @@
 <?php
 
-/*============================================
-Loading the Custom Module into child theme
-=============================================*/
+/*==================================================================
+Enregistre les modules personnalisés dans votre thème enfant
+Ajoutez ce code dans le fichier function.php de votre thème enfant.
+===================================================================*/
 function divi_child_theme_setup_image() {
    if ( class_exists('ET_Builder_Module')) {
       get_template_part( 'custom-modules/image_module' );
