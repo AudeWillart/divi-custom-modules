@@ -80,7 +80,7 @@ function wpc_get_image_id($image_url) {
   return attachment_url_to_postid($image_url);
 }
 
-function divi_child_theme_setup_blurb_module() {
+function divi_child_theme_setup_image_fullwidth() {
    if ( class_exists('ET_Builder_Module_Fullwidth_Image')) {
       get_template_part( 'custom-modules/fullwidth_image_module' );
       $fullwidth_image_module = new WPC_ET_Builder_Module_Fullwidth_Image();
@@ -90,12 +90,8 @@ function divi_child_theme_setup_blurb_module() {
 }
 add_action('wp', 'divi_child_theme_setup_image_fullwidth', 9999);
 
-function wpc_get_fullwidth_image_id($image_url) {
-   return attachment_url_to_postid($image_url);
-}
-
-function divi_child_theme_setup_image_fullwidth() {
-   if ( class_exists('custom_ET_Builder_Module_Blurb')) {
+function divi_child_theme_setup_blurb_module() {
+   if ( class_exists('ET_Builder_Module_Blurb')) {
       get_template_part( 'custom-modules/blurb_module' );
       $blurb_module = new custom_ET_Builder_Module_Blurb();
       remove_shortcode( 'et_pb_blurb' );
@@ -103,10 +99,6 @@ function divi_child_theme_setup_image_fullwidth() {
    }
 }
 add_action('wp', 'divi_child_theme_setup_blurb_module', 9999);
-
-function wpc_get_blurb_module_image_id($image_url) {
-   return attachment_url_to_postid($image_url);
-} // A quoi elle sert cette fonction???
 
 //Change la position de la sidebar par défaut. 
 // mettre ce code dans le fichier functions.php
