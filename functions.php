@@ -77,9 +77,7 @@ function divi_child_theme_setup_image() {
 add_action('wp', 'divi_child_theme_setup_image', 9999);
 
 function wpc_get_image_id($image_url) {
-   global $wpdb;
-   $attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url )); 
-        return $attachment[0]; 
+  return attachment_url_to_postid($image_url);
 }
 
 function divi_child_theme_setup_image_fullwidth() {
@@ -92,11 +90,15 @@ function divi_child_theme_setup_image_fullwidth() {
 }
 add_action('wp', 'divi_child_theme_setup_image_fullwidth', 9999);
 
-function wpc_get_fullwidth_image_id($image_url) {
-   global $wpdb;
-   $attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url )); 
-        return $attachment[0]; 
+function divi_child_theme_setup_blurb_module() {
+   if ( class_exists('ET_Builder_Module_Blurb')) {
+      get_template_part( 'custom-modules/blurb_module' );
+      $blurb_module = new custom_ET_Builder_Module_Blurb();
+      remove_shortcode( 'et_pb_blurb' );
+      add_shortcode( 'et_pb_blurb', array($blurb_module, '_shortcode_callback') );
+   }
 }
+add_action('wp', 'divi_child_theme_setup_blurb_module', 9999);
 
 //Change la position de la sidebar par défaut. 
 // mettre ce code dans le fichier functions.php

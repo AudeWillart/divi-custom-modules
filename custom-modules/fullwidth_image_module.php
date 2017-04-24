@@ -258,8 +258,8 @@ class WPC_ET_Builder_Module_Fullwidth_Image extends ET_Builder_Module {
          '<img src="%1$s" alt="%2$s"%3$s />
          %4$s',
          esc_url( $src ),
-         esc_attr( $alt ),
-         ( '' !== $title_text ? sprintf( ' title="%1$s"', esc_attr( $title_text ) ) : '' ),
+         ( '' !== $alt ? esc_attr( $alt ) : $img_default_alt ),
+         ( '' !== $title_text ? sprintf( ' title="%1$s"', esc_attr( $title_text ) ) : sprintf( ' title="%1$s"', esc_attr( $img_default_title ) ) ),
          'on' === $is_overlay_applied ? $overlay_output : ''
       );
 
@@ -291,3 +291,4 @@ class WPC_ET_Builder_Module_Fullwidth_Image extends ET_Builder_Module {
       return $output;
    }
 }
+new WPC_ET_Builder_Module_Fullwidth_Image;
