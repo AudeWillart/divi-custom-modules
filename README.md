@@ -5,8 +5,9 @@ Merci à Benoit Faure qui m'a beaucoup aidée !
 
 ## Utilisation :
 
-• Ajoutez le code du fichier function.php dans le fichier du même nom de votre thème enfant.
-• Ajouter le dossier custom-modules à la racine de votre thème enfant.
+• Ajoutez le code du fichier function.php dans le fichier du même nom de votre thème enfant.<br>
+• Ajouter le dossier custom-modules à la racine de votre thème enfant.<br>
+• Mettre à jour toutes les pages
 
 # Alternative Text Divi images modules
 This code allows you to use alternative text from the default WordPress field instead of Divi modules.
@@ -15,5 +16,6 @@ Thanks to Benoit Faure who helped me a lot!
 
 ## Use :
 
-• Add the code of the function.php file to the file of the same name in your child theme.
-• Add the custom-modules folder to the root of your child theme.
+• Add the code of the function.php file to the file of the same name in your child theme.<br>
+• Add the custom-modules folder to the root of your child theme.<br>
+• Update all pages
